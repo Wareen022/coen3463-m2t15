@@ -7,7 +7,7 @@ block content
               h2 We are just one email away.              
             h2.subtitle.is-5
               |Feel free to email us if you have a question or you want to inquire.             
-            img.promo-img(src='/images/logo.jpg', height='200px')    
+            img.promo-img(src='/images/logo.png', height='200px')    
           br
         form(action='/ContactUs/send', method='post')
             .columns.is-vcentered
@@ -15,14 +15,11 @@ block content
                 .box
                   label.label Name                  
                   p.control
-                    input.input(type='text', name='name', placeholder='John Smith')                    
+                    input.input(type='text', name='name', placeholder='John Smith')       
                   label.label Email
-
                   p.control
                     input.input(type='text', name='email', placeholder='jsmith@example.org')
-
                   textarea.textarea(name='message', placeholder='Leave a message...')
-
                 p.control.has-addons.has-text-centered.columns
                   center
                     a
