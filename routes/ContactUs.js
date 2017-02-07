@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/send', function(req, res, next){
-	var trasporter = nodemailer.createTransport({
+	var trasporter = nodemailer.createTransport('SMTP', {
 		service: 'Gmail',
 		auth: {
 			user: 'coen3463t15@gmail.com',
