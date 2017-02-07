@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/send', function(req, res, next){
-	var trasporter = nodemailer.createTransport('SMTP', {
+	var trasporter = nodemailer.createTransport({
 		service: 'Gmail',
 		auth: {
 			user: 'coen3463t15@gmail.com',
@@ -29,7 +29,7 @@ router.post('/send', function(req, res, next){
 			res.redirect('/');
 		}else{
 			console.log('Message Sent:'+info.response);
-			res.redirect('/');
+			res.redirect('/ContactUs');
 		}
 
 	});
