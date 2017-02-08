@@ -12,6 +12,7 @@ var ServiceOffered = require('./routes/ServiceOffered');
 var package1 = require('./routes/package1');
 var package2 = require('./routes/package2');
 var package3 = require('./routes/package3');
+var nodemailer = require('./routes/ContactUs');
 
 var app = express();
 
