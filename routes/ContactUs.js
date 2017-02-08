@@ -17,7 +17,7 @@ router.post('/send', function(req, res, next){
 	});
 
 	var mailOptions = {
-		from: 'JillyBeans <coen3463t15@gmail.com>',
+		from: 'JillyBeans',
 		to: 'coen3463t15@gmail.com',
 		subject: 'inquiries',
 		text: 'you have a new message... Name: '+req.body.name+ ' Email: '+req.body.email+ ' Message: '+req.body.Message,
