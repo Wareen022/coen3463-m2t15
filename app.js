@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
 
 var index = require('./routes/index');
 var aboutus = require('./routes/AboutUs');
@@ -12,7 +13,7 @@ var ServiceOffered = require('./routes/ServiceOffered');
 var package1 = require('./routes/package1');
 var package2 = require('./routes/package2');
 var package3 = require('./routes/package3');
-var nodemailer = require('./routes/ContactUs');
+
 
 var app = express();
 
