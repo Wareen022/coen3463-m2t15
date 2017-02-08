@@ -8,30 +8,30 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/send', function(req, res, next){
-	var transporter = nodemailer.createTransport({
-		service: 'Gmail',
-		auth: {
-			user: 'coen3463t15@gmail.com',
-			pass: 'p@ssw0rd12345',
-		}
-	});
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'coen3463t15@gmail.com',
+            pass: 'p@ssw0rd12345',
+        }
+    });
 
-	var mailOptions = {
-		from: 'JillyBeans',
-		to: 'coen3463t15@gmail.com',
-		subject: 'inquiries',
-		text: 'you have a new message... Name: '+req.body.name+ ' Email: '+req.body.email+ ' Message: '+req.body.message,
-		html: '<p>You got a new message with the following details..</p><ul><li>Name: '+req.body.name+ '</li><li>Email: '+req.body.email+ '</li><li>Message: '+req.body.message+ '</li></ul>'
-	};
-	transporter.sendMail(mailOptions, function(error, info){
-		if (error){
-			console.log(error);
-			res.redirect('/');
-		}else{
-			console.log('Message Sent:'+info.response);
-			res.redirect('/ContactUs');
-		}
+    var mailOptions = {
+        from: 'JillyBeans <coen3463t15@gmail.com>',
+        to: 'coen3463t15@gmail.com',
+        subject: 'inquiries',
+        text: 'you have a new message... Name: '+req.body.name+ ' Email: '+req.body.email+ ' Message: '+req.body.message,
+        html: '<p>You got a new message with the following details..</p><ul><li>Name: '+req.body.name+ '</li><li>Email: '+req.body.email+ '</li><li>Message: '+req.body.message+ '</li></ul>'
+    };
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error){
+            console.log(error);
+            res.redirect('/');
+        }else{
+            console.log('Message Sent:'+info.response);
+            res.redirect('/ContactUs');
+        }
 
-	});
+    });
 });
 module.exports = router;
